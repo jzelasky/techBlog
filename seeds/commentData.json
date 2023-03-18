@@ -1,12 +1,10 @@
 [
     {
         "content": "I really liked learning about MVC, but it was tricky to understand at first",
-        "blog_post_id": "1",
-        "user_id": "4"
+        "user_id": 4
     },
     {
         "content": "I didn't like learning ORM, as soon as I got used to SQL everything changed!",
-        "blog_post_id": "3",
-        "user_id": "4"
+        "user_id": 4
     }
 ]
