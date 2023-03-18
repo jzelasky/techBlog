@@ -5,12 +5,12 @@ const Comment = require('./Comment')
 // post has many comments, comments belong to post
 
 BlogPost.hasMany(Comment, {
-    foreignKey: 'comment_id',
+    foreignKey: 'blog_post_id',
     onDelete: 'CASCADE',
 })
 
 Comment.belongsTo(BlogPost, {
-    foreignKey: 'comment_id'
+    foreignKey: 'blog_post_id'
 })
 
 //posts belong to one user, a user has many posts
