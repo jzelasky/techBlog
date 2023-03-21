@@ -10,10 +10,10 @@
 
 <body >
   <header>
-    <h1 class="display-2 m-2">Tech Blog</h1>
+    <h1 class="display-2 m-2">Cool New Tech Blog</h1>
     <ul class="nav nav-tabs m-3">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link active" href="/">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="#">Dashboard</a>
@@ -22,12 +22,11 @@
       <li class="nav-item">
         <a class="nav-link active" href="#">Logout</a>
       </li>
-      {{/if}}
-      {{#unless logged_in}}
+      {{else}}
       <li class="nav-item">
-        <a class="nav-link active" href="#">Login</a>
+        <a class="nav-link active" href="/login">Login</a>
       </li>
-      {{/unless}}
+      {{/if}}
     </ul>
   </header>
   <main>
@@ -39,11 +38,3 @@
 </body>
 
 </html>
-
-<!--
-{{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
-    {{/if}}
- -->

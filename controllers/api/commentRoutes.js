@@ -31,10 +31,11 @@ router.get('/:id', async (req, res) => {
   });
 
 router.post('/', async (req,res) => {
+  console.log(res)
     try {
         const commentData = await Comment.create({
             content: req.body.content,
-            //not sure how to connect blog_post_id
+            blog_post_id: req.body.content,
             user_id: req.session.user_id
         })
         res.status(200).json(commentData)
