@@ -1,0 +1,19 @@
+<div class="card m-5">
+    <div class="card-body">
+        <h5 class="card-title">{{post.dataValues.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Posted by: {{post.dataValues.user.dataValues.username}} </h6>
+        <p class="card-text">{{post.dataValues.content}}</p>
+        <p class="card-text text-muted small">MM/DD/YYYY</p>
+        <a href="#" class="card-link"> Post a comment</a>
+        <h6 class="m-2 text-muted">Comments:</h6>
+        {{#each comments as |comment|}}
+        <div class="card text-muted">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">{{comment.dataValues.user.dataValues.username}}</h6>
+                <p class="card-text">{{comment.dataValues.content}}</p>
+                <p class="card-text small">MM/DD/YYYY</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

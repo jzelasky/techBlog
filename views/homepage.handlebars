@@ -1,34 +1,12 @@
-<!--Trying to make hbs work-->
+<div class="d-flex flex-wrap justify-content-center">
 {{#each posts as |post| }}
-<div class="row align-center mb-5">
-    <a href="/details/{{post.dataValues.id}}"><h2>{{post.dataValues.title}}</h2></a>
+<div class="card m-5" style="width: 15rem;">
+    <a href="/details/{{post.dataValues.id}}">
+        <div class="card-body" >
+            <h5 class="card-title">{{post.dataValues.title}}</h5>
+            <p class="card-text text-muted small">MM/DD/YYYY</p>
+        </div>
+    </a>
 </div>
 {{/each}}
-
-<!--Template for title and date created only, available regardless if logged in-->
-<div class="card m-5">
-    <div class="card-body">
-        <h5 class="card-title">Title</h5>
-        <p class="card-text text-muted small">MM/DD/YYYY</p>
-    </div>
-</div>
-
-<!--Template for full details-->
-<!--Not sure how to link to this, think I need another hbs page and route, only available if logged in-->
-<div class="card m-5">
-    <div class="card-body">
-        <h5 class="card-title">Title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">User</h6>
-        <p class="card-text">Post content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempora blanditiis aperiam explicabo adipisci nobis harum sapiente consectetur aliquam sed? Autem, laborum repellendus temporibus molestias quisquam ipsa dicta debitis qui?</p>
-        <p class="card-text text-muted small">MM/DD/YYYY</p>
-        <a href="#" class="card-link"> Post a comment</a>
-        <h6 class="m-2 text-muted">Comments:</h6>
-        <div class="card text-muted">
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2">User</h6>
-                <p class="card-text">Comment contents: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolores id architecto libero animi impedit.</p>
-                <p class="card-text small">MM/DD/YYYY</p>
-            </div>
-        </div>
-    </div>
 </div>

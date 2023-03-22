@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, BlogPost } = require('../models');
+const { User, BlogPost, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // root enpoint
@@ -7,7 +7,6 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const posts = await BlogPost.findAll()
-    console.log(posts)
     res.render('homepage', {
       logged_in: req.session.logged_in,
       posts: posts
@@ -24,6 +23,30 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', async (req, res) => {
   try {
     res.render('dashboard')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/details/:id', withAuth, async (req, res) => {
+  try {
+    const post = await BlogPost.findByPk(req.params.id, {
+      include: [{model: User}]
+    })
+    const comments = await Comment.findAll({
+      include: [{model: User}]
+    },
+    {
+      where: {
+        blog_post_id: req.params.id
+      }
+    })
+    console.log(comments)
+    res.render('details', {
+      logged_in: req.session.logged_in,
+      post: post,
+      comments: comments
+    })
   } catch (err) {
     res.status(500).json(err);
   }
