@@ -9,9 +9,12 @@
 </head>
 
 <body >
-  <header>
-    <h1 class="display-2 m-2">Cool New Tech Blog</h1>
-    <ul class="nav nav-tabs m-3">
+  <header >
+    <div class="d-flex justify-content-center">
+      <h1 class="display-2 m-2">Cool New Tech Blog</h1>
+    </div>
+    <div class="d-flex justify-content-center border-bottom">
+    <ul class="nav nav-tabs m-3 " >
       <li class="nav-item">
         <a class="nav-link active" href="/">Home</a>
       </li>
@@ -28,6 +31,7 @@
       </li>
       {{/if}}
     </ul>
+    </div>
   </header>
   <main>
     {{{ body }}}
