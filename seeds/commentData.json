@@ -2,11 +2,15 @@
     {
         "content": "I really liked learning about MVC, but it was tricky to understand at first",
         "blog_post_id": "1",
-        "user_id": 4
+        "user_id": 4,
+        "updatedAt": "2023-03-22T15:27:44.536Z",
+        "createdAt": "2023-03-22T15:27:44.536Z"
     },
     {
         "content": "I didn't like learning ORM, as soon as I got used to SQL everything changed!",
         "blog_post_id": 3,
-        "user_id": 4
+        "user_id": 4,
+        "updatedAt": "2023-03-22T15:27:44.536Z",
+        "createdAt": "2023-03-22T15:27:44.536Z"
     }
 ]
