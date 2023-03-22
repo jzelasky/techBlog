@@ -1,17 +1,27 @@
+<!--Trying to make hbs work-->
 {{#each users as |user| }}
 <div class="row align-center mb-5">
     <h2>{{user.name}}</h2>
 </div>
 {{/each}}
+
+<!--Template for title and date created only, available regardless if logged in-->
+<div class="card m-5">
+    <div class="card-body">
+        <h5 class="card-title">Title</h5>
+        <p class="card-text text-muted small">MM/DD/YYYY</p>
+    </div>
+</div>
+
+<!--Template for full details-->
+<!--Not sure how to link to this, think I need another hbs page and route, only available if logged in-->
 <div class="card m-5">
     <div class="card-body">
         <h5 class="card-title">Title</h5>
         <h6 class="card-subtitle mb-2 text-muted">User</h6>
         <p class="card-text">Post content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempora blanditiis aperiam explicabo adipisci nobis harum sapiente consectetur aliquam sed? Autem, laborum repellendus temporibus molestias quisquam ipsa dicta debitis qui?</p>
         <p class="card-text text-muted small">MM/DD/YYYY</p>
-        {{#if logged_in}}
         <a href="#" class="card-link"> Post a comment</a>
-        {{/if}}
         <h6 class="m-2 text-muted">Comments:</h6>
         <div class="card text-muted">
             <div class="card-body">
