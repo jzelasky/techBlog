@@ -17,24 +17,18 @@ router.get('/', async (req, res) => {
 //create new user
 router.post('/', async (req, res) => {
   try {
-    const validPassword = await userData.checkPassword(req.body.password);
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Invalid password, please try again' });
-      return;
-    }
+    console.log(req.body.password)
     const userData = await User.create({
       username: req.body.username,
       password: req.body.password
     })
-    res.status(200).json(userData)
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.status(200).json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });

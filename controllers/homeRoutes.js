@@ -1,12 +1,17 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, BlogPost } = require('../models');
 const withAuth = require('../utils/auth');
 
 // root enpoint
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage')
+    const posts = await BlogPost.findAll()
+    console.log(posts)
+    res.render('homepage', {
+      logged_in: req.session.logged_in,
+      posts: posts
+    })
   } catch (err) {
     res.status(500).json(err);
   }

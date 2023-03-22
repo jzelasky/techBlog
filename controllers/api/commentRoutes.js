@@ -33,9 +33,10 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req,res) => {
   console.log(res)
     try {
+      console.log(req.body)
         const commentData = await Comment.create({
             content: req.body.content,
-            blog_post_id: req.body.content,
+            blog_post_id: req.body.blog_post_id,
             user_id: req.session.user_id
         })
         res.status(200).json(commentData)
