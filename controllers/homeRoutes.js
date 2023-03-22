@@ -33,13 +33,12 @@ router.get('/details/:id', withAuth, async (req, res) => {
     const post = await BlogPost.findByPk(req.params.id, {
       include: [{model: User}]
     })
+    
     const comments = await Comment.findAll({
-      include: [{model: User}]
-    },
-    {
       where: {
         blog_post_id: req.params.id
-      }
+      },
+      include: [{model: User}]
     })
     console.log(comments)
     res.render('details', {
