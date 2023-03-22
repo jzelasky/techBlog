@@ -20,13 +20,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/dashboard', async (req, res) => {
-  try {
-    res.render('dashboard')
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+
 
 router.get('/details/:id', withAuth, async (req, res) => {
   try {
@@ -40,7 +34,6 @@ router.get('/details/:id', withAuth, async (req, res) => {
       },
       include: [{model: User}]
     })
-    console.log(comments)
     res.render('details', {
       logged_in: req.session.logged_in,
       post: post,
@@ -50,5 +43,32 @@ router.get('/details/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/dashboard', async (req, res) => {
+  try {
+    console.log(req.session.user_id)
+    const posts = await BlogPost.findAll({ where: { user_id: req.session.user_id } });
+    const user = await User.findByPk(req.session.user_id)
+    console.log(user)
+    res.render('dashboard', {
+      logged_in: req.session.logged_in,
+      posts: posts,
+      user: user
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/dashboard/new-post', async (req, res) => {
+  try {
+    res.render('createPost', {
+      logged_in: req.session.logged_in,
+      
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;

@@ -11,5 +11,21 @@ THEN the title and contents of my post are saved and I am taken back to an updat
 WHEN I click on one of my existing posts in the dashboard
 THEN I am able to delete or update my post and taken back to an updated dashboard
 -->
-
-<h1>Dashboard coming soon</h1>
+<div class="d-flex justify-content-center">
+    <h3 class="m-3">{{user.dataValues.username}}'s dashboard</h3>
+</div>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary" href="/new-post">Create new post</button>
+</div>
+{{#each posts as |post|}}
+<div class="card m-5">
+    <div class="card-body">
+        <h5 class="card-title">{{post.dataValues.title}}</h5>
+        <p class="card-text">{{post.dataValues.content}}</p>
+        <p class="card-text text-muted small">{{format_date post.dataValues.createdAt}}</p>
+        <a id="edit" class="m-2">Edit</a>
+        <a id="delete" class="m-2">Delete</a>
+    </div>
+</div>
+{{/each}}
+<script src="/js/dashboard.js"></script>
