@@ -1,10 +1,4 @@
 <!--
-WHEN I click on the dashboard option in the navigation
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
-
-WHEN I click on the button to add a new blog post
-THEN I am prompted to enter both a title and contents for my blog post
-
 WHEN I click on the button to create a new blog post
 THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
 
@@ -20,14 +14,16 @@ THEN I am able to delete or update my post and taken back to an updated dashboar
     </a>
 </div>
 {{#each posts as |post|}}
-<div class="card m-5">
+<div class="d-flex justify-content-center">
+<div class="card m-5" style="width: 35rem;">
     <div class="card-body">
         <h5 class="card-title">{{post.dataValues.title}}</h5>
         <p class="card-text">{{post.dataValues.content}}</p>
         <p class="card-text text-muted small">{{format_date post.dataValues.createdAt}}</p>
-        <a id="edit" class="m-2">Edit</a>
-        <a id="delete" class="m-2">Delete</a>
+        <a id="edit" class="m-1">Edit</a>
+        <a id="delete" class="m-1">Delete</a>
     </div>
+</div>
 </div>
 {{/each}}
 <script src="/js/dashboard.js"></script>
