@@ -9,7 +9,7 @@ THEN I am able to delete or update my post and taken back to an updated dashboar
     <h2 class="m-3">{{user.dataValues.username}}'s dashboard</h2>
 </div>
 <div class="d-flex justify-content-center">
-    <a href="dashboard/new-post">
+    <a href="/new-post">
         <button type="button" class="btn btn-secondary">Create new post</button>
     </a>
 </div>
@@ -20,7 +20,7 @@ THEN I am able to delete or update my post and taken back to an updated dashboar
         <h5 class="card-title">{{post.dataValues.title}}</h5>
         <p class="card-text">{{post.dataValues.content}}</p>
         <p class="card-text text-muted small">{{format_date post.dataValues.createdAt}}</p>
-        <a id="edit" class="m-1">Edit</a>
+        <a href="dashboard/edit-post/{{post.dataValues.id}}" id="edit" class="m-1">Edit</a>
         <a id="delete" class="m-1">Delete</a>
     </div>
 </div>

@@ -20,8 +20,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-
-
 router.get('/details/:id', withAuth, async (req, res) => {
   try {
     const post = await BlogPost.findByPk(req.params.id, {
@@ -64,11 +62,23 @@ router.get('/dashboard/new-post', async (req, res) => {
   try {
     res.render('createPost', {
       logged_in: req.session.logged_in,
-      
     })
   } catch (err) {
     res.status(500).json(err);
   }
 })
+
+router.get('/dashboard/edit-post/:id', async (req, res) => {
+  try {
+    const post = await BlogPost.findByPk(req.params.id)
+    res.render('editPost', {
+      logged_in: req.session.logged_in,
+      post: post
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 
 module.exports = router;
