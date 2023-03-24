@@ -26,6 +26,8 @@ Your dashboard contains all the posts you have written and an option to create a
 
 When you are finished using this tech blog, you can click "logout" in the navagation bar and you will be logged out. Alternatively, if you are idle on the site for more than 10 minutes, you will be automatically logged out. To log back in, click "login" in the navagation bar (if you are not already on the log in page), enter your username and password and click "submit". 
 
+![Screenshot of web application homepage](./public/img/tech-blog-screenshot.png) 
+
 ## Contact
 
 For any questions or comments about this project please contact:
