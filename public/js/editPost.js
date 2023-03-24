@@ -1,10 +1,7 @@
 const editPostHandler = async () => {
     const title = document.querySelector('#title').value.trim();
     const content = document.querySelector('#content').value.trim();
-
     const id = document.location.href.slice(42)
-
-    console.log(id)
 
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
@@ -13,6 +10,8 @@ const editPostHandler = async () => {
     })
     if (response.ok) {
         document.location.replace('/dashboard');
+    } else {
+        alert('Unable to edit post.')
     }
 }
 

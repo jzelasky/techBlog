@@ -47,7 +47,6 @@ router.get('/dashboard', async (req, res) => {
     console.log(req.session.user_id)
     const posts = await BlogPost.findAll({ where: { user_id: req.session.user_id } });
     const user = await User.findByPk(req.session.user_id)
-    console.log(user)
     res.render('dashboard', {
       logged_in: req.session.logged_in,
       posts: posts,
@@ -55,6 +54,7 @@ router.get('/dashboard', async (req, res) => {
     })
   } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 

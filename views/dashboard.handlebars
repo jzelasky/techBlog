@@ -1,15 +1,8 @@
-<!--
-WHEN I click on the button to create a new blog post
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
-
-WHEN I click on one of my existing posts in the dashboard
-THEN I am able to delete or update my post and taken back to an updated dashboard
--->
 <div class="d-flex justify-content-center">
     <h2 class="m-3">{{user.dataValues.username}}'s dashboard</h2>
 </div>
 <div class="d-flex justify-content-center">
-    <a href="/new-post">
+    <a href="dashboard/new-post">
         <button type="button" class="btn btn-secondary">Create new post</button>
     </a>
 </div>
@@ -21,9 +14,10 @@ THEN I am able to delete or update my post and taken back to an updated dashboar
         <p class="card-text">{{post.dataValues.content}}</p>
         <p class="card-text text-muted small">{{format_date post.dataValues.updatedAt}}</p>
         <a href="dashboard/edit-post/{{post.dataValues.id}}" id="edit" class="m-1">Edit</a>
-        <a id="delete" class="m-1">Delete</a>
+        <a id="delete" class="m-1 {{post.dataValues.id}}">Delete</a>
     </div>
 </div>
 </div>
 {{/each}}
-<script src="/js/dashboard.js"></script>
+
+<script src="/js/deletePost.js"></script>
