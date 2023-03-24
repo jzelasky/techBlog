@@ -19,7 +19,7 @@ THEN I am able to delete or update my post and taken back to an updated dashboar
     <div class="card-body">
         <h5 class="card-title">{{post.dataValues.title}}</h5>
         <p class="card-text">{{post.dataValues.content}}</p>
-        <p class="card-text text-muted small">{{format_date post.dataValues.createdAt}}</p>
+        <p class="card-text text-muted small">{{format_date post.dataValues.updatedAt}}</p>
         <a href="dashboard/edit-post/{{post.dataValues.id}}" id="edit" class="m-1">Edit</a>
         <a id="delete" class="m-1">Delete</a>
     </div>

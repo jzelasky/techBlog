@@ -2,12 +2,10 @@ const editPostHandler = async () => {
     const title = document.querySelector('#title').value.trim();
     const content = document.querySelector('#content').value.trim();
 
-    const loc = document.location
-    const slice = loc.slice(5,10)
+    const id = document.location.href.slice(42)
 
-    console.log(slice.datatype)
+    console.log(id)
 
-    /*
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content}),
@@ -16,7 +14,6 @@ const editPostHandler = async () => {
     if (response.ok) {
         document.location.replace('/dashboard');
     }
-    */
 }
 
 
