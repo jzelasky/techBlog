@@ -16,7 +16,9 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Something a turtle said',
-  cookie: {},
+  cookie: {
+    expires: 1000 * 60 *10
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
