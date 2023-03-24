@@ -42,7 +42,7 @@ router.get('/details/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
     console.log(req.session.user_id)
     const posts = await BlogPost.findAll({ where: { user_id: req.session.user_id } });

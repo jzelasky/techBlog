@@ -1,6 +1,6 @@
 const deletePostHandler = async () => {
    
-    const id = document.querySelector('#delete').className.slice(3);
+    const id = document.querySelector('#delete').className.slice(9);
     
     console.log(id);
 

@@ -4,7 +4,7 @@
         <h6 class="card-subtitle mb-2 text-muted">Posted by: {{post.dataValues.user.dataValues.username}} </h6>
         <p class="card-text">{{post.dataValues.content}}</p>
         <p class="card-text text-muted small">{{format_date post.dataValues.createdAt}}</p>
-        <a href="#" class="card-link"> Post a comment</a>
+        <a class="card-link link {{post.dataValues.id}}" id="comment"> Post a comment</a>
         <h6 class="m-2 text-muted">Comments:</h6>
         {{#each comments as |comment|}}
         <div class="card text-muted">
@@ -17,3 +17,4 @@
         {{/each}}
     </div>
 </div>
+<script src="/js/comment.js"></script>
