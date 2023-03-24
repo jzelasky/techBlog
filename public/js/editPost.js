@@ -1,7 +1,7 @@
 const editPostHandler = async () => {
     const title = document.querySelector('#title').value.trim();
     const content = document.querySelector('#content').value.trim();
-    const id = document.location.href.slice(42)
+    const id = document.location.href.slice(57)
 
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
