@@ -12,7 +12,7 @@ People working in tech need a way to communicate about ideas. This blog website 
 
 ## Installation
 
-There is no need to install anything to use this web application. Simply go to: 
+There is no need to install anything to use this web application. Simply go to: https://tech-blog-0423.herokuapp.com/
 
 ## Usage
 
